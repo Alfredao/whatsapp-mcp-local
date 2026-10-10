@@ -4,6 +4,15 @@ O que muda para quem usa o WhatsApp MCP, versão a versão. Formato baseado no
 [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), com versões em
 [SemVer](https://semver.org/lang/pt-BR/).
 
+## [Não lançado]
+
+### Adicionado
+
+- **Marcar como não lida.** A IA marca uma conversa como não lida, como o
+  "marcar como não lida" do celular, para ela se destacar na lista e em
+  "conversas não lidas". Só muda como a sua conta mostra a conversa: nada é
+  enviado e a outra pessoa não vê nada. Marcar como lida desfaz.
+
 ## [1.3.1] - 2026-10-09
 
 ### Corrigido

@@ -235,11 +235,17 @@ func TestNewToolsReachWacliTheRightWay(t *testing.T) {
 	if res, isErr := callTool(t, port, "mark_chat_read", map[string]any{"chat_jid": testMae}); isErr {
 		t.Fatalf("mark read: %v", res)
 	}
+	if res, isErr := callTool(t, port, "mark_chat_unread", map[string]any{"chat_jid": testMae}); isErr {
+		t.Fatalf("mark unread: %v", res)
+	}
 	if res, isErr := callTool(t, port, "organise_chat", map[string]any{"chat_jid": testMae, "action": "archive"}); isErr {
 		t.Fatalf("archive: %v", res)
 	}
 	if !strings.Contains(argsLog(), "chats mark-read --chat "+testMae+" --receipts") {
 		t.Errorf("mark read without receipts:\n%s", argsLog())
+	}
+	if !strings.Contains(argsLog(), "chats mark-unread --chat "+testMae) {
+		t.Errorf("mark unread not sent:\n%s", argsLog())
 	}
 
 	// Triage reads the store: Mãe waits, Lucas does not.
